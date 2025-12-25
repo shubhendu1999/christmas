@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Christmas Wish</title>
+
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        background: linear-gradient(135deg, #0f5132, #198754);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: Arial, sans-serif;
+        color: white;
+    }
+
+    .card {
+        background: rgba(255,255,255,0.15);
+        backdrop-filter: blur(10px);
+        padding: 40px 30px;
+        border-radius: 25px;
+        text-align: center;
+        width: 90%;
+        max-width: 350px;
+        box-shadow: 0 0 30px rgba(0,0,0,0.3);
+    }
+
+    .tree {
+        font-size: 60px;
+        margin-bottom: 15px;
+    }
+
+    h1 {
+        margin: 0;
+        color: #ffdf6c;
+        font-size: 30px;
+    }
+
+    p {
+        font-size: 15px;
+        margin: 15px 0 25px;
+        opacity: 0.9;
+    }
+
+    input {
+        width: 100%;
+        padding: 12px;
+        border-radius: 12px;
+        border: none;
+        outline: none;
+        font-size: 16px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    button {
+        width: 100%;
+        padding: 12px;
+        border-radius: 12px;
+        border: none;
+        background: #ffdf6c;
+        color: #1b4332;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    button:active {
+        transform: scale(0.98);
+    }
+</style>
+</head>
+
+<body>
+
+<div class="card">
+    <div class="tree">🎄</div>
+    <h1>Christmas Wishes</h1>
+    <p>Enter your name to receive a special wish ✨</p>
+
+    <input type="text" id="nameInput" placeholder="Your name">
+    <button onclick="goNext()">Continue</button>
+</div>
+<script>
+function goNext() {
+    const name = document.getElementById("nameInput").value.trim();
+    if (name === "") {
+        alert("Please enter your name");
+        return;
+    }
+    window.location.href = "wish.html?name=" + encodeURIComponent(name);
+}
+</script>
+
+</body>
+</html>

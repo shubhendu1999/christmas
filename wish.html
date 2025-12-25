@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Merry Christmas</title>
+
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        background: radial-gradient(circle at top, #1b9c85, #0b3d2e);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: Arial, sans-serif;
+        color: white;
+    }
+
+    .card {
+        background: rgba(255,255,255,0.12);
+        backdrop-filter: blur(12px);
+        padding: 45px 35px;
+        border-radius: 28px;
+        text-align: center;
+        width: 90%;
+        max-width: 380px;
+        box-shadow: 0 0 35px rgba(0,0,0,0.4);
+        animation: fade 1.2s ease;
+    }
+
+    @keyframes fade {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .tree {
+        font-size: 70px;
+        margin-bottom: 15px;
+    }
+
+    h1 {
+        color: #ffdf6c;
+        font-size: 36px;
+        margin-bottom: 10px;
+    }
+
+    .name {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        text-transform: capitalize;
+    }
+
+    .message {
+        font-size: 16px;
+        line-height: 1.6;
+        opacity: 0.95;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="card">
+    <div class="tree">🎄</div>
+    <h1>Merry Christmas</h1>
+    <div class="name" id="nameText"></div>
+    <div class="message">
+        May this Christmas fill your heart with peace,  
+        your home with warmth,  
+        and your life with happiness and love.  
+        <br><br>
+        Wishing you joy today and always ✨🎁
+    </div>
+</div>
+
+<script>
+    const params = new URLSearchParams(window.location.search);
+    const name = params.get("name") || "Friend";
+    document.getElementById("nameText").innerText = name;
+</script>
+
+</body>
+</html>
